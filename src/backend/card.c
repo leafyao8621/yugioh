@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "core.h"
+#include "../../resource/all_cards.h"
 
 const char *extra_type_monster_lookup[12] = {
     "Normal",
@@ -65,40 +66,10 @@ const char *type_lookup[25] = {
 int card_init(struct Card* card, int card_code) {
     switch (card_code) {
     case 46986414:
-        card->basic_type = BASIC_TYPE_MONSTER;
-        card->extra_type.monster_type = EXTRA_TYPE_MONSTER_NORMAL;
-        card->card_code = 46986414;
-        card->state.monster_state.orig_attribute = MONSTER_ATTRIBUTE_DARK;
-        card->state.monster_state.orig_type = MONSTER_TYPE_SPELLCASTER;
-        card->state.monster_state.cur_attribute = MONSTER_ATTRIBUTE_DARK;
-        card->state.monster_state.cur_type = MONSTER_TYPE_SPELLCASTER;
-        card->state.monster_state.orig_atk = 2500;
-        card->state.monster_state.orig_def = 2100;
-        card->state.monster_state.cur_orig_atk = 2500;
-        card->state.monster_state.cur_orig_def = 2100;
-        card->state.monster_state.cur_atk = 2500;
-        card->state.monster_state.cur_def = 2100;
-        card->name = "Dark Magician";
-        card->description =
-        "The ultimate wizard in terms of attack and defense.";
+        dark_magician_init(card);
         break;
     case 99785935:
-        card->basic_type = BASIC_TYPE_MONSTER;
-        card->extra_type.monster_type = EXTRA_TYPE_MONSTER_NORMAL;
-        card->card_code = 99785935;
-        card->state.monster_state.orig_attribute = MONSTER_ATTRIBUTE_EARTH;
-        card->state.monster_state.orig_type = MONSTER_TYPE_ROCK;
-        card->state.monster_state.cur_attribute = MONSTER_ATTRIBUTE_EARTH;
-        card->state.monster_state.cur_type = MONSTER_TYPE_ROCK;
-        card->state.monster_state.orig_atk = 1400;
-        card->state.monster_state.orig_def = 1700;
-        card->state.monster_state.cur_orig_atk = 1400;
-        card->state.monster_state.cur_orig_def = 1700;
-        card->state.monster_state.cur_atk = 1400;
-        card->state.monster_state.cur_def = 1700;
-        card->name = "Alpha The Magnet Warrior";
-        card->description =
-        "Alpha, Beta, and Gamma meld as one to form a powerful monster.";
+        alpha_the_magnet_warrior_init(card);
         break;
     case 39256679:
         card->basic_type = BASIC_TYPE_MONSTER;

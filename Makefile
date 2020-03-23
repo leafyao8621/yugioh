@@ -1,5 +1,5 @@
 CC = gcc
-SRC = $(wildcard src/backend/*.c)
+SRC = $(wildcard src/backend/*.c) $(wildcard resource/*.c)
 OBJ = $(SRC:.c=.o)
 TEST = test
 
