@@ -2,7 +2,7 @@
 #include "core.h"
 #include "../../resource/all_cards.h"
 
-const char *extra_type_monster_lookup[12] = {
+static const char *extra_type_monster_lookup[12] = {
     "Normal",
     "Effect",
     "Ritual",
@@ -17,7 +17,7 @@ const char *extra_type_monster_lookup[12] = {
     "Gemini"
 };
 
-const char *extra_type_spell_lookup[5] = {
+static const char *extra_type_spell_lookup[5] = {
     "Normal",
     "Continuous",
     "Equip",
@@ -25,7 +25,7 @@ const char *extra_type_spell_lookup[5] = {
     "Ritual"
 };
 
-const char *attribute_lookup[7] = {
+static const char *attribute_lookup[7] = {
     "Dark",
     "Divine",
     "Earth",
@@ -35,7 +35,7 @@ const char *attribute_lookup[7] = {
     "Wind",
 };
 
-const char *type_lookup[25] = {
+static const char *type_lookup[25] = {
     "Aqua",
     "Beast",
     "Beast Warrior",
@@ -72,68 +72,17 @@ int card_init(struct Card* card, int card_code) {
         alpha_the_magnet_warrior_init(card);
         break;
     case 39256679:
-        card->basic_type = BASIC_TYPE_MONSTER;
-        card->extra_type.monster_type = EXTRA_TYPE_MONSTER_NORMAL;
-        card->card_code = 39256679;
-        card->state.monster_state.orig_attribute = MONSTER_ATTRIBUTE_EARTH;
-        card->state.monster_state.orig_type = MONSTER_TYPE_ROCK;
-        card->state.monster_state.cur_attribute = MONSTER_ATTRIBUTE_EARTH;
-        card->state.monster_state.cur_type = MONSTER_TYPE_ROCK;
-        card->state.monster_state.orig_atk = 1700;
-        card->state.monster_state.orig_def = 1600;
-        card->state.monster_state.cur_orig_atk = 1700;
-        card->state.monster_state.cur_orig_def = 1600;
-        card->state.monster_state.cur_atk = 1700;
-        card->state.monster_state.cur_def = 1600;
-        card->name = "Beta The Magnet Warrior";
-        card->description =
-        "Alpha, Beta, and Gamma meld as one to form a powerful monster.";
+        beta_the_magnet_warrior_init(card);
         break;
     case 11549357:
-        card->basic_type = BASIC_TYPE_MONSTER;
-        card->extra_type.monster_type = EXTRA_TYPE_MONSTER_NORMAL;
-        card->card_code = 11549357;
-        card->state.monster_state.orig_attribute = MONSTER_ATTRIBUTE_EARTH;
-        card->state.monster_state.orig_type = MONSTER_TYPE_ROCK;
-        card->state.monster_state.cur_attribute = MONSTER_ATTRIBUTE_EARTH;
-        card->state.monster_state.cur_type = MONSTER_TYPE_ROCK;
-        card->state.monster_state.orig_atk = 1500;
-        card->state.monster_state.orig_def = 1800;
-        card->state.monster_state.cur_orig_atk = 1500;
-        card->state.monster_state.cur_orig_def = 1800;
-        card->state.monster_state.cur_atk = 1500;
-        card->state.monster_state.cur_def = 1800;
-        card->name = "Gamma The Magnet Warrior";
-        card->description =
-        "Alpha, Beta, and Gamma meld as one to form a powerful monster.";
+        gamma_the_magnet_warrior_init(card);
         break;
     case 13039848:
-        card->basic_type = BASIC_TYPE_MONSTER;
-        card->extra_type.monster_type = EXTRA_TYPE_MONSTER_NORMAL;
-        card->card_code = 13039848;
-        card->state.monster_state.orig_attribute = MONSTER_ATTRIBUTE_EARTH;
-        card->state.monster_state.orig_type = MONSTER_TYPE_ROCK;
-        card->state.monster_state.cur_attribute = MONSTER_ATTRIBUTE_EARTH;
-        card->state.monster_state.cur_type = MONSTER_TYPE_ROCK;
-        card->state.monster_state.orig_atk = 1300;
-        card->state.monster_state.orig_def = 2000;
-        card->state.monster_state.cur_orig_atk = 1300;
-        card->state.monster_state.cur_orig_def = 2000;
-        card->state.monster_state.cur_atk = 1300;
-        card->state.monster_state.cur_def = 2000;
-        card->name = "Giant Soldier of Stone";
-        card->description =
-        "A giant warrior made of stone. A punch from this creature has "
-        "earth-shaking results.";
+        giant_soldier_of_stone_init(card);
         break;
     case 72892473:
-        card->basic_type = BASIC_TYPE_SPELL;
-        card->extra_type.spell_type = EXTRA_TYPE_SPELL_NORMAL;
-        card->card_code = 72892473;
-        card->name = "Card Destruction";
-        card->description =
-        "Both players discard as many cards as possible from their hands, then "
-        "each player draws the same number of cards they discarded.";
+        card_destruction_init(card);
+        break;
     }
     return 0;
 }
