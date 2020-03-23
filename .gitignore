@@ -1,3 +1,4 @@
 test
 src/backend/*.o
 resource/*.o
+.vscode
