@@ -54,13 +54,14 @@
 #define MONSTER_TYPE_PSYCHIC        0x4000
 #define MONSTER_TYPE_PYRO           0x8000
 #define MONSTER_TYPE_REPTILE        0x10000
-#define MONSTER_TYPE_SEA_SERPENT    0x20000
-#define MONSTER_TYPE_SPELLCASTER    0x40000
-#define MONSTER_TYPE_THUNDER        0x80000
-#define MONSTER_TYPE_WARRIOR        0x100000
-#define MONSTER_TYPE_WINGED_BEAST   0x200000
-#define MONSTER_TYPE_WYRM           0x400000
-#define MONSTER_TYPE_ZOMBIE         0x800000
+#define MONSTER_TYPE_ROCK           0x20000
+#define MONSTER_TYPE_SEA_SERPENT    0x40000
+#define MONSTER_TYPE_SPELLCASTER    0x80000
+#define MONSTER_TYPE_THUNDER        0x100000
+#define MONSTER_TYPE_WARRIOR        0x200000
+#define MONSTER_TYPE_WINGED_BEAST   0x400000
+#define MONSTER_TYPE_WYRM           0x800000
+#define MONSTER_TYPE_ZOMBIE         0x1000000
 
 #define STATE_POSITION_UP           0x1
 #define STATE_POSITION_DOWN         0x2
@@ -120,7 +121,7 @@ struct Card {
     } state;
     int (*can_activate)(struct Field*, struct Card*);
     int (*effect)(struct Field*, struct Card*, void *args);
-    const char *description;
+    const char *name, *description;
 };
 
 struct Field {
@@ -136,4 +137,7 @@ struct Field {
         struct Card *targets[10];
     } chain[10], cur_event;
 };
+
+int card_init(struct Card *card, int card_code);
+int card_print(struct Card *card, char verbose);
 #endif
