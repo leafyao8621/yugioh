@@ -124,21 +124,35 @@ struct Card {
     const char *name, *description;
 };
 
-struct Field {
+struct Game {
     int turn;
     char turn_player, phase, sub_phase;
     struct Card *main_field[2][10];
     struct Card deck[2][60];
+    struct Card *deck_ptr[2];
     struct Card extra_deck[2][15];
     struct Card token[2][60];
     struct Card *field_spell[2];
     struct Card *grave_yard[2][60];
     struct Card *removal[2][60];
     struct Card *pendulum[2][2];
+    struct Card *hand[2][60];
     struct {
         struct Card *card;
-        int type;
-        struct Card *targets[10];
+        int cost_type;
+        union {
+            int cost_lp;
+            struct {
+                int len;
+                int cost_action;
+                struct Card *costs[10];
+            } cost_card;
+        } cost;
+        int effect_type;
+        union {
+            int effect_lp;
+            struct Card *targets[10];
+        } effect;
     } chain[10], cur_event;
 };
 
@@ -146,4 +160,5 @@ int card_init(struct Card *card, int card_code);
 int card_print(struct Card *card, char verbose);
 int deck_init(struct Card *deck, int deck_code);
 int deck_print(struct Card *deck, char verbose);
+int game_summon(struct Game *game, int hand, int field, int *tributes);
 #endif
