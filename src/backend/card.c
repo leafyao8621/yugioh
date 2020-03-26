@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "core.h"
-#include "../../resource/all_cards.h"
+#include "../../resource/cards/all_cards.h"
 
 static const char *extra_type_monster_lookup[12] = {
     "Normal",
@@ -82,6 +82,9 @@ int card_init(struct Card* card, int card_code) {
         break;
     case 72892473:
         card_destruction_init(card);
+        break;
+    case 0:
+        card->basic_type = BASIC_TYPE_NULL;
         break;
     }
     return 0;

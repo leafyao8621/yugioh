@@ -127,10 +127,14 @@ struct Card {
 struct Field {
     int turn;
     char turn_player, phase, sub_phase;
-    struct Card main_field[2][10];
+    struct Card *main_field[2][10];
     struct Card deck[2][60];
     struct Card extra_deck[2][15];
     struct Card token[2][60];
+    struct Card *field_spell[2];
+    struct Card *grave_yard[2][60];
+    struct Card *removal[2][60];
+    struct Card *pendulum[2][2];
     struct {
         struct Card *card;
         int type;
@@ -140,4 +144,6 @@ struct Field {
 
 int card_init(struct Card *card, int card_code);
 int card_print(struct Card *card, char verbose);
+int deck_init(struct Card *deck, int deck_code);
+int deck_print(struct Card *deck, char verbose);
 #endif
