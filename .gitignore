@@ -2,4 +2,5 @@ test
 src/backend/*.o
 resource/cards/*.o
 resource/decks/*.o
+resource/*.sqlite-journal
 .vscode
