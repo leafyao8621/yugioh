@@ -14,6 +14,8 @@ int giant_soldier_of_stone_init(struct Card *card) {
     card->state.monster_state.cur_orig_def = 2000;
     card->state.monster_state.cur_atk = 1300;
     card->state.monster_state.cur_def = 2000;
+    card->state.monster_state.orig_level = 3;
+    card->state.monster_state.cur_level = 3;
     card->name = "Giant Soldier of Stone";
     card->description =
     "A giant warrior made of stone. A punch from this creature has "

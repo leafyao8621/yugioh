@@ -14,6 +14,8 @@ int beta_the_magnet_warrior_init(struct Card *card) {
     card->state.monster_state.cur_orig_def = 1600;
     card->state.monster_state.cur_atk = 1700;
     card->state.monster_state.cur_def = 1600;
+    card->state.monster_state.orig_level = 4;
+    card->state.monster_state.cur_level = 4;
     card->name = "Beta The Magnet Warrior";
     card->description =
     "Alpha, Beta, and Gamma meld as one to form a powerful monster.";

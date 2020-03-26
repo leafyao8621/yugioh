@@ -100,6 +100,9 @@ int card_print(struct Card *card, char verbose) {
             }
         }
         putchar(10);
+        printf(card->extra_type.monster_type == EXTRA_TYPE_MONSTER_XYZ ?
+               "Rank: %d\n" : "Level: %d\n",
+               card->state.monster_state.cur_level);
         printf("ATK: %d DEF: %d\n",
                card->state.monster_state.cur_atk,
                card->state.monster_state.cur_def);

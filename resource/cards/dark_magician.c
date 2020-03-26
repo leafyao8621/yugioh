@@ -14,6 +14,8 @@ int dark_magician_init(struct Card *card) {
     card->state.monster_state.cur_orig_def = 2100;
     card->state.monster_state.cur_atk = 2500;
     card->state.monster_state.cur_def = 2100;
+    card->state.monster_state.orig_level = 7;
+    card->state.monster_state.cur_level = 7;
     card->name = "Dark Magician";
     card->description =
     "The ultimate wizard in terms of attack and defense.";
