@@ -7,6 +7,9 @@ int deck_init(struct Card *deck, int deck_code) {
     case 0:
         yugi_1_init(deck);
         break;
+    case 1:
+        kaiba_1_init(deck);
+        break;
     }
     return 0;
 }
