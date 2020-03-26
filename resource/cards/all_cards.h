@@ -7,5 +7,6 @@
 #include "gamma_the_magnet_warrior.h"
 #include "giant_soldier_of_stone.h"
 #include "card_destruction.h"
+#include "blue_eyes_white_dragon.h"
 
 #endif

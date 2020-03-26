@@ -83,6 +83,9 @@ int card_init(struct Card* card, int card_code) {
     case 72892473:
         card_destruction_init(card);
         break;
+    case 89631139:
+        blue_eyes_white_dragon_init(card);
+        break;
     case 0:
         card->basic_type = BASIC_TYPE_NULL;
         break;
